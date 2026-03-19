@@ -60,7 +60,7 @@ For development:
 
 ```
 
-npm run dev
+npm run start
 
 ```
 
