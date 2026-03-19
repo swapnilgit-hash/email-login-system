@@ -22,38 +22,6 @@ This project is a Node.js backend service that allows users to:
 
 ---
 
-## Project Structure
-
-```
-project
-│
-├── config
-│     db.js
-│
-├── models
-│     user.model.js
-│
-├── controllers
-│     auth.controller.js
-│
-├── services
-│     email.service.js
-│
-├── routes
-│     auth.routes.js
-│
-├── utils
-│     generateToken.js
-│
-├── app.js
-├── server.js
-├── .env
-├── package.json
-├── README.md
-```
-
----
-
 ## Setup Instructions
 
 ### Clone the repository
@@ -84,27 +52,24 @@ MONGO_URI=mongodb://localhost:27017/email-verification
 
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASS=your_app_password
-```
 
-Note:
-
-- Use **Gmail App Password**, not your actual password
-- Enable "Less secure apps" OR use App Passwords
-
----
 
 ### Run the server
 
 For development:
 
 ```
+
 npm run dev
+
 ```
 
 For production:
 
 ```
+
 node server.js
+
 ```
 
 ---
@@ -112,7 +77,9 @@ node server.js
 ## Base URL
 
 ```
+
 http://localhost:3000
+
 ```
 
 ---
@@ -126,8 +93,10 @@ http://localhost:3000
 Example:
 
 ```
+
 http://localhost:3000/api/auth/verify-email?token=your_token_here
-```
+
+````
 
 4. User clicks the link
 5. Account gets verified
@@ -138,7 +107,7 @@ http://localhost:3000/api/auth/verify-email?token=your_token_here
 
 ---
 
-### 🔹 1. Register User
+###  1. Register User
 
 **POST** `/api/auth/register`
 
@@ -150,7 +119,7 @@ http://localhost:3000/api/auth/verify-email?token=your_token_here
   "email": "swapnil@gmail.com",
   "password": "123456"
 }
-```
+````
 
 #### Response
 
@@ -205,7 +174,7 @@ http://localhost:3000/api/auth/verify-email?token=your_token_here
 
 ---
 
-#### ✅ Success
+#### Success
 
 ```json
 {
@@ -215,7 +184,7 @@ http://localhost:3000/api/auth/verify-email?token=your_token_here
 
 ---
 
-#### ❌ If Email Not Verified
+#### If Email Not Verified
 
 ```json
 {
@@ -225,7 +194,7 @@ http://localhost:3000/api/auth/verify-email?token=your_token_here
 
 ---
 
-#### ❌ Invalid Credentials
+#### Invalid Credentials
 
 ```json
 {
@@ -235,7 +204,7 @@ http://localhost:3000/api/auth/verify-email?token=your_token_here
 
 ---
 
-## 🔐 Security Practices
+## Security Practices
 
 - Passwords are hashed using bcrypt
 - Verification tokens are securely generated using crypto
@@ -244,7 +213,7 @@ http://localhost:3000/api/auth/verify-email?token=your_token_here
 
 ---
 
-## ❗ Error Handling
+## Error Handling
 
 - Duplicate email registration
 - Invalid or expired verification token
@@ -253,7 +222,7 @@ http://localhost:3000/api/auth/verify-email?token=your_token_here
 
 ---
 
-## 📦 Future Improvements
+## Future Improvements
 
 - Resend verification email
 - JWT authentication
@@ -262,14 +231,6 @@ http://localhost:3000/api/auth/verify-email?token=your_token_here
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Swapnil
-
----
-
-## ⭐ Notes
-
-- Make sure MongoDB is running locally
-- Ensure correct email credentials are set in `.env`
-- Check spam folder for verification emails
